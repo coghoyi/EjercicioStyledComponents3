@@ -28,17 +28,20 @@ const Form = ({ cardData, setCardData }) => {
 			<div>
 				<label>Exp. Date (MM/YY)</label>
 				<input
+					name='month'
 					type='text'
 					placeholder='MM'
 					onChange={e => handleChange(e.target, cardData, setCardData)}
 				/>
 				<input
+					name='year'
 					type='text'
 					placeholder='YY'
 					onChange={e => handleChange(e.target, cardData, setCardData)}
 				/>
 				<label htmlFor='cvc'>CVC</label>
 				<input
+					name='cvc'
 					type='text'
 					placeholder='e.g. 123'
 					onChange={e => handleChange(e.target, cardData, setCardData)}
