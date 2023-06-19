@@ -19,7 +19,7 @@ const Form = ({ cardData, setCardData }) => {
 			<div>
 				<label htmlFor='number'>Card Number</label>
 				<StyledInput
-					type='text'
+					type='number'
 					id='number'
 					name='cardNumber'
 					onChange={e => handleChange(e.target, cardData, setCardData)}
@@ -29,20 +29,20 @@ const Form = ({ cardData, setCardData }) => {
 				<label>Exp. Date (MM/YY)</label>
 				<input
 					name='month'
-					type='text'
+					type='number'
 					placeholder='MM'
 					onChange={e => handleChange(e.target, cardData, setCardData)}
 				/>
 				<input
 					name='year'
-					type='text'
+					type='number'
 					placeholder='YY'
 					onChange={e => handleChange(e.target, cardData, setCardData)}
 				/>
 				<label htmlFor='cvc'>CVC</label>
 				<input
 					name='cvc'
-					type='text'
+					type='number'
 					placeholder='e.g. 123'
 					onChange={e => handleChange(e.target, cardData, setCardData)}
 				/>
