@@ -1,11 +1,11 @@
 import { CARD_DATA } from '../../constants/card-data';
-import { StyledInput } from './styles';
+import { StyledBtn, StyledDate, StyledDate2, StyledDiv1, StyledDiv2, StyledDiv3, StyledFlex, StyledForm, StyledInput, StyledInputCVC, StyledInputDate, StyledLabel, } from './styles';
 
 const Form = ({ cardData, setCardData }) => {
 	return (
-		<form onSubmit={e => e.preventDefault()}>
-			<div>
-				<label htmlFor='name'>CardHolder Name</label>
+		<StyledForm onSubmit={e => e.preventDefault()}>
+			<StyledDiv1>
+				<StyledLabel htmlFor='name'>CardHolder Name</StyledLabel>
 				<StyledInput
 					type='text'
 					id='name'
@@ -15,40 +15,45 @@ const Form = ({ cardData, setCardData }) => {
 				{!cardData.name && cardData.name !== CARD_DATA.name && (
 					<span>{"Can't be blank"}</span>
 				)}
-			</div>
-			<div>
-				<label htmlFor='number'>Card Number</label>
+			</StyledDiv1>
+			<StyledDiv2>
+				<StyledLabel htmlFor='number'>Card Number</StyledLabel>
 				<StyledInput
 					type='number'
 					id='number'
 					name='cardNumber'
 					onChange={e => handleChange(e.target, cardData, setCardData)}
 				/>
-			</div>
-			<div>
-				<label>Exp. Date (MM/YY)</label>
-				<input
+			</StyledDiv2>
+			<StyledDiv3>
+				<StyledDate>
+				<StyledLabel>Exp. Date (MM/YY)</StyledLabel>
+				<StyledDate2>
+				<StyledInputDate
 					name='month'
 					type='number'
 					placeholder='MM'
 					onChange={e => handleChange(e.target, cardData, setCardData)}
 				/>
-				<input
+				<StyledInputDate
 					name='year'
 					type='number'
 					placeholder='YY'
 					onChange={e => handleChange(e.target, cardData, setCardData)}
-				/>
-				<label htmlFor='cvc'>CVC</label>
-				<input
+				/></StyledDate2>
+				</StyledDate>
+				<StyledFlex>
+				<StyledLabel htmlFor='cvc'>CVC</StyledLabel>
+				<StyledInputCVC
 					name='cvc'
 					type='number'
 					placeholder='e.g. 123'
 					onChange={e => handleChange(e.target, cardData, setCardData)}
 				/>
-			</div>
-			<input type='submit' value='Confirm' />
-		</form>
+				</StyledFlex>
+			</StyledDiv3>
+			<StyledBtn type='submit' value='Confirm' />
+		</StyledForm>
 	);
 };
 
